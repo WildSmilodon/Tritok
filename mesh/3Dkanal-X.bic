@@ -1,0 +1,159 @@
+# 
+# This is a TriTok boundary and initial conditions file
+#
+# walls: 1:z=0, 2:y=0, 3:x=1, 4:y=1, 5:x=0, 6:z=1  
+#
+
+#\subsection{Flow in a square channel - x}
+#inflow $x=0$,    = 5 
+#outflow $x=1$,   = 3
+#wall $z=1$,       = 6
+#wall $z=0$,    = 1
+#wall $y=0$,  = 2
+#wall $y=1$   = 4
+
+#Velocity boundary conditions:
+#\begin{itemize}
+#\item[$v_x$] inflow $v_x=1$, walls $v_x=0$, outflow $\p v_x/\p n=0$
+#\item[$v_y$] all walls $v_y=0$
+#\item[$v_z$] all walls $v_z=0$
+#\end{itemize}
+
+#Vorticity boundary conditions:
+#\begin{itemize}
+#\item[$\omega_x$] inflow, outflow $\omega_x=0$, walls $\omega_x=km$
+#\item[$\omega_y$] walls $y=0$ and $y=1$ $\omega_y=0$, other walls $\omega_y=km$,
+#\item[$\omega_z$] walls $z=0$ and $z=1$ $\omega_z=0$, other walls $\omega_z=km$,
+#\end{itemize}
+
+#
+# Divide node on edges bewteen walls
+# node on wall1 and on wall2 is set to wall
+# EDGE must be put before CORNER !!
+#
+EDGE
+# wall1 wall2 wall
+# robovi na ravnini z=0
+1 2 1
+1 3 1
+1 4 1 
+1 5 1
+# navpicni robovi (v smeri z)
+2 3 2
+3 4 4
+4 5 4
+5 2 2
+# robovi na ravnini z=1
+6 2 6
+6 3 6
+6 4 6 
+6 5 6
+END
+#
+# Divide node on corners bewteen walls
+# node on wall1 and on wall2 and on wall3 is set to wall
+#
+CORNER
+# wall1 wall2 wall3 wall
+# vogali na ravnini z=0
+1 2 3 1
+1 3 4 1
+1 4 5 1
+1 5 2 1
+# vogali na ravnini z=1
+6 2 3 6
+6 3 4 6
+6 4 5 6
+6 5 2 6
+END
+
+
+#
+# Set initial values for all field functions
+# ff= 1=vx, 2=vy, 3=vz, 4=wx, 5=wy, 6=wz, 7=dwxdn, 8=dwydn, 9=dwzdn
+# by default, everything is zero everywhere before applying BC
+#
+INITIAL
+# ff,value
+4 -3
+END
+#
+# Set boundary condtions 
+#
+X-KINEMATICS
+# wall, kode, bctype (=0 fixed value u=a =1 linear u=ax+by+cz+d)
+1 0 0
+0
+2 0 0
+0
+3 2 0
+0
+4 0 0
+0
+5 1 0
+1
+6 0 0
+0
+END
+
+Y-KINEMATICS
+# wall, kode, bctype (=0 fixed value u=a =1 linear u=ax+by+cz+d)
+1 0 0
+0
+2 1 0
+0
+3 0 0
+0
+4 1 0
+0
+5 0 0
+0
+6 0 0
+0
+END
+
+Z-KINEMATICS
+# wall, kode, bctype (=0 fixed value u=a =1 linear u=ax+by+cz+d)
+1 1 0
+0
+2 0 0
+0
+3 0 0
+0
+4 0 0
+0
+5 0 0
+0
+6 1 0
+0
+END
+
+X-VORTICITY
+# ff(1=u,2=q) wall value
+1 1 0.0D0
+1 2 0.0D0
+1 3 0.0D0
+1 4 0.0D0
+1 5 0.0D0
+1 6 0.0D0
+END
+
+Y-VORTICITY
+# ff(1=u,2=q) wall value
+1 1 0.0D0
+1 2 0.0D0
+1 3 0.0D0
+1 4 0.0D0
+1 5 0.0D0
+1 6 0.0D0
+END
+
+Z-VORTICITY
+# ff(1=u,2=q) wall value
+1 1 0.0D0
+1 2 0.0D0
+1 3 0.0D0
+1 4 0.0D0
+1 5 0.0D0
+1 6 0.0D0
+END

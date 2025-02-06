@@ -1,0 +1,92 @@
+# 
+# This is a TriTok boundary and initial conditions file
+#
+# walls: 1:x=0, 2:stene, 3:x=1  
+#
+
+#\subsection{Flow in a pipe - x}
+#inflow $x=0$,    = 1 
+#outflow $x=1$,   = 3
+#wall        = 2
+
+#
+# Divide node on edges bewteen walls
+# node on wall1 and on wall2 is set to wall
+# EDGE must be put before CORNER !!
+#
+EDGE
+# wall1 wall2 wall
+1 2 2
+2 3 3
+END
+#
+
+
+#
+# Set initial values for all field functions
+# ff= 1=vx, 2=vy, 3=vz, 4=wx, 5=wy, 6=wz, 7=dwxdn, 8=dwydn, 9=dwzdn
+# by default, everything is zero everywhere before applying BC
+#
+INITIAL
+# ff,value
+1 1.0
+END
+#
+# Set boundary condtions 
+#
+X-KINEMATICS
+# wall, kode, bctype (=0 fixed value u=a =1 linear u=ax+by+cz+d)
+1 1 0
+1
+2 0 0
+0
+3 2 0
+0
+END
+
+Y-KINEMATICS
+# wall, kode, bctype (=0 fixed value u=a =1 linear u=ax+by+cz+d)
+1 0 0
+0
+2 0 0
+0
+3 0 0
+0
+END
+
+Z-KINEMATICS
+# wall, kode, bctype (=0 fixed value u=a =1 linear u=ax+by+cz+d)
+1 0 0
+0
+2 0 0
+0
+3 0 0
+0
+END
+
+X-VORTICITY
+# ff(1=u,2=q) wall value
+1 1 0.0D0
+1 2 0.0D0
+1 3 0.0D0
+END
+
+Y-VORTICITY
+# ff(1=u,2=q) wall value
+1 1 0.0D0
+1 2 0.0D0
+1 3 0.0D0
+END
+
+Z-VORTICITY
+# ff(1=u,2=q) wall value
+1 1 0.0D0
+1 2 0.0D0
+1 3 0.0D0
+END
+
+# Normal component of vorticity at the wall
+N-VORTICITY
+# wall value
+2 0.0D0
+END

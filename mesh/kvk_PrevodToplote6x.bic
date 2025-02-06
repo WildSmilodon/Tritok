@@ -1,0 +1,34 @@
+# 
+# This is a TriTok boundary and initial conditions file
+# 
+# field function : 1 = u, 2 = q
+#
+
+#
+# Set initial values for all field functions
+#
+INITIAL
+# ff value
+1 -9.0D0
+2 -9.0D0
+END
+#
+# Set boundary condtions (only known), all the rest are unknown
+#
+BOUNDARY
+# ff walln value 
+# velika kocka
+1 3 3.0D0
+1 5 0.0D0
+2 1 0.0D0
+2 2 0.0D0
+2 4 0.0D0
+2 6 0.0D0
+# mala kocka
+1 9 2.0D0
+1 11 1.0D0
+2 7 0.0D0
+2 8 0.0D0
+2 10 0.0D0
+2 12 0.0D0
+END

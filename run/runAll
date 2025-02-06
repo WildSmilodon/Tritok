@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#cd laplace
+
+echo "Working on:"
+
+for dir in ./*/     # list directories in the form "/tmp/dirname/"
+
+do
+  cd $dir
+  echo "$dir"
+  ../../bin/Tritok
+  cd ..
+done

@@ -1,0 +1,47 @@
+#
+# TriTok input file
+#
+MDIR ../../mesh/ 
+
+LGEO kva2x2x2.geo
+
+LBIC NaturalConvection-X.bic
+
+URBW 1.0 1.0 1.0
+URDV 1.0 1.0 1.0
+URDW 0.3 0.3 0.3
+URDT 0.1
+URDC 1.0
+
+RAPR 1000.0 0.71
+REYN 1.0
+
+# Paraview export VTU, VTK
+PARA 1 1
+
+# 0,15 stopinj
+GRAV 0 0 -1
+#GRAV -0.258819045102520795 0 -0.9659258262890683122
+
+#EQNS Bw Dv Dw T DC mH 
+EQNS 1 1 1 1 0 0
+
+RELA 10000 1.0 1.0D-6
+TIME 1.0D20 1 1
+#TIME 0.1 20 20
+
+LSQS 5000 1.0E-7
+DLSE 1 10.0 0.001
+PKMS 500 1.0E-7
+
+# kmBr,kmBs,kmDr,kmDs
+#GAUS 8 8 8 8 
+#GAUS 2 2 2 2
+GAUS 4 4 4 4
+IIDI 2
+
+# vse celice enake = copy=1, durgace copy=0
+SCRO 1
+REST 0
+
+

@@ -1,0 +1,3 @@
+Copy the bem3d.gid folder into the GiD "problemtypes" folder,
+this will define BEM 3D as a problem type and will 
+after running "calculate" prepare the mesh file for TriTok.

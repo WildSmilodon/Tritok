@@ -1,0 +1,6 @@
+NUMBER: 1 CONDITION: boundary
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: stevilka_roba
+VALUE: 1
+END CONDITION

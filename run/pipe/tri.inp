@@ -1,0 +1,47 @@
+#
+# TriTok input file
+#
+MDIR ../../mesh/
+
+LGEO cev_D1L1_3033.geo
+
+LBIC cev-X-rob.bic
+#LBIC cev-X-nowx.bic
+#LBIC cev-X.bic
+
+URBW 1.0 1.0 1.0
+URDV 1.0 1.0 1.0
+URDW 0.1 0.1 0.1
+URDT 0.1
+URDC 1.0
+
+#RAPR 1000.0 0.71
+
+# 0,15 stopinj
+GRAV 0 0 -1
+
+#EQNS Bw Dv Dw T DC mH
+EQNS 3 1 1 0 0 0
+
+REYN 1.0
+# Paraview export VTU, VTK
+PARA 1 1
+
+RELA 20000 1.0 1.0D-6
+TIME 1.0D20 1 1
+#TIME 0.1 20 20
+
+LSQS 5000 1.0E-7
+DLSE 1 10.0 0.001
+PKMS 500 1.0E-7
+
+# kmBr,kmBs,kmDr,kmDs
+#GAUS 8 8 8 8 
+#GAUS 2 2 2 2
+GAUS 4 4 4 4
+IIDI 2
+
+# vse celice enake = copy=1, durgace copy=0
+COPY 0
+SCRO 1
+REST 0
