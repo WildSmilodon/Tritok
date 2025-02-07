@@ -2,6 +2,14 @@
 
 Tritok simulates flow and heat transfer of an incompressible viscous fluid in 3D. Velocity-vorticity formulation of Navier-Stokes eqautions is solved by the Boundary Element Method. It was written by Jure Ravnik, University of Maribor, Faculty of Mechanical Engineering, Smetanova 17, SI-2000, Maribor, Slovenia
 
+### Cite as
+
+Ravnik, J. (2025). Tritok, a BEM based viscous flow solver (v8.0). Zenodo. https://doi.org/10.5281/zenodo.14831282
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14831282.svg)](https://doi.org/10.5281/zenodo.14831282)
+
+### Numerical details
+
 Numerical aspects of the algorithm are explained in the following papers:
 
 J. Ravnik, L. Skerget and Z. Zunic: Velocity-vorticity formulation for 3D natural convection in an inclined enclosure by BEM; International Journal of Heat and Mass Transfer, 51, 4517-4527, 2008; http://dx.doi.org/10.1016/j.ijheatmasstransfer.2008.01.018
